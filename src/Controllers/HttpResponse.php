@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Api\Controllers;
+
 header('Content-Type:application/json');
 trait HttpResponse
 {

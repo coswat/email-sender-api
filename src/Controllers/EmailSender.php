@@ -50,11 +50,11 @@ class EmailSender
                   'time' => strtotime("now")
                   ], 'Email Send Successfully');
             } catch (Exception $e) {
-              http_response_code(400);
+                http_response_code(400);
                 return $this->error([], $mail->ErrorInfo);
             }
         } catch (\Throwable $e) {
-          http_response_code(500);
+            http_response_code(500);
             return $this->internalError($e->getMessage());
         }
     }

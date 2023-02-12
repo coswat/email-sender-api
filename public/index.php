@@ -1,20 +1,21 @@
 <?php
 
 error_reporting(0);
-require '../vendor/autoload.php';
-header('Content-Type:application/json');
+require "../vendor/autoload.php";
+header("Content-Type:application/json");
+
 use Api\Controllers\ApiController;
 
-$api = $_POST['apikey'];
-$email = $_POST['email'];
+$api = $_POST["apikey"];
+$email = $_POST["email"];
 //subject is optional param
-$subject = $_POST['subject'];
+$subject = $_POST["subject"];
 if (!$api || !$email) {
-  http_response_code(400);
+    http_response_code(400);
     $response = [
-    'status' => false,
-    'message' => 'Params Missing, Required Params email and apikey',
-    'data' => []
+        "status" => false,
+        "message" => "Params Missing, Required Params email and apikey",
+        "data" => [],
     ];
     echo json_encode($response);
     exit();

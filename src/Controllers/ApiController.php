@@ -24,12 +24,12 @@ class ApiController extends EmailSender
     public function proccess(): string
     {
         if (!$this->validMail()) {
-           http_response_code(400);
+            http_response_code(400);
             return $this->error([], 'Enter A Valid Email');
             exit();
         }
         if (!$this->checkApi()) {
-          http_response_code(401);
+            http_response_code(401);
             return $this->error([], 'Invalid Api Key!');
 
             exit();
@@ -45,8 +45,8 @@ class ApiController extends EmailSender
     }
     private function checkApi()
     {
-          $dotenv = Dotenv::createImmutable('../');
-         $dotenv->load();
+        $dotenv = Dotenv::createImmutable('../');
+        $dotenv->load();
 
         if ($this->key !== $_ENV['API_KEY']) {
             return false;
