@@ -7,8 +7,8 @@ header("Content-Type:application/json");
 use Api\Controllers\ApiController;
 use Dotenv\Dotenv;
 
-$api = $_GET["apikey"];
-$email = $_GET["email"];
+$api = $_POST["apikey"];
+$email = $_POST["email"];
 
  $dotenv = Dotenv::createImmutable('../');
  $dotenv->load();
