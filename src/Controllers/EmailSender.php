@@ -8,7 +8,6 @@ use Api\Controllers\HttpResponse;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-use Dotenv\Dotenv;
 
 class EmailSender
 {
@@ -21,8 +20,7 @@ class EmailSender
             $subject = 'Here is the subject';
         }
         try {
-            $dotenv = Dotenv::createImmutable('../.');
-            $dotenv->load();
+
             $mail = new PHPMailer(true);
 
             try {

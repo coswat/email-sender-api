@@ -6,7 +6,6 @@ namespace Api\Controllers;
 
 use Api\Controllers\HttpResponse;
 use Api\Controllers\EmailSender;
-use Dotenv\Dotenv;
 
 class ApiController extends EmailSender
 {
@@ -45,8 +44,6 @@ class ApiController extends EmailSender
     }
     private function checkApi()
     {
-        $dotenv = Dotenv::createImmutable('../');
-        $dotenv->load();
 
         if ($this->key !== $_ENV['API_KEY']) {
             return false;
