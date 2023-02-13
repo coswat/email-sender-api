@@ -12,6 +12,7 @@ composer install
 ## Environment Setup in `.env` file <br>
 ```
 API_KEY=340b7a5ac0f398d2dfe3054541c1596e
+APP_NAME=PHP
 
 MAIL_HOST={mail credentials}
 MAIL_PORT={mail credentials}
