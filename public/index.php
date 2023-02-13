@@ -7,9 +7,9 @@ header("Content-Type:application/json");
 use Api\Controllers\ApiController;
 use Dotenv\Dotenv;
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
 $api = $_POST["apikey"];
 $email = $_POST["email"];
-
  $dotenv = Dotenv::createImmutable('../');
  $dotenv->load();
  
@@ -29,4 +29,13 @@ if (!$api || !$email) {
 } else {
     $sendEmail = new ApiController($email, $api);
     echo $sendEmail->proccess();
+}
+}else {
+  http_response_code(405);
+    $response = [
+        "status" => false,
+        "message" => 'Api Method Is Post, Sended Method Is '.$_SERVER['REQUEST_METHOD'],
+    ];
+    echo json_encode($response);
+    exit();
 }

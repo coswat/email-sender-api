@@ -32,7 +32,7 @@ class EmailSender
                 $mail->Port       = $_ENV['MAIL_PORT'];
 
                 //Recipients
-                $mail->setFrom($_ENV['MAIL_FROM'], 'Mailer');
+                $mail->setFrom($_ENV['MAIL_FROM'], $_ENV['APP_NAME']);
                 $mail->addAddress($email);
 
                 //Content
