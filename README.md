@@ -19,7 +19,6 @@ MAIL_PORT={mail credentials}
 MAIL_USERNAME={mail credentials}
 MAIL_PASSWORD={mail credentials}
 MAIL_FROM=example@mail.co
-
 ```
 ## Api
 Api documentation is added in email-sender-api/index.php
