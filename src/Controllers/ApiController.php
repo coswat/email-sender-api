@@ -10,16 +10,10 @@ use Api\Controllers\EmailSender;
 class ApiController extends EmailSender
 {
     use HttpResponse;
-    protected string $email;
-    private string $key;
-    protected string $suject;
+   
+    public function __construct(protected string $email, private string $key,protected string $suject = null)
+    {  }
 
-    public function __construct(string $email, string $key, $suject = null)
-    {
-        $this->email = $email;
-        $this->key = $key;
-        $this->subject = $suject;
-    }
     public function proccess(): string
     {
         if (!$this->validMail()) {
