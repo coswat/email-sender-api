@@ -12,7 +12,7 @@ class ApiController extends EmailSender
     use HttpResponse;
    
     public function __construct(protected string $email, private string $key,protected string $suject = null)
-    {  }
+    {/**/}
 
     public function proccess(): string
     {
